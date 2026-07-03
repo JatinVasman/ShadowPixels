@@ -220,7 +220,7 @@ export default function Contact({ hideBorder = false }: { hideBorder?: boolean }
                       budget: "",
                     });
                   }}
-                  className="mt-6 text-xs font-heading font-black tracking-widest text-ember border-b border-ember/40 hover:border-ember pb-0.5 transition-colors"
+                  className="mt-6 text-xs font-heading font-black tracking-widest text-ember border-b border-ember/40 hover:border-ember pb-0.5 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 transform inline-block"
                 >
                   SEND ANOTHER MESSAGE
                 </button>
@@ -392,7 +392,7 @@ export default function Contact({ hideBorder = false }: { hideBorder?: boolean }
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 bg-ember text-white px-6 py-3.5 text-xs font-semibold font-heading tracking-[0.2em] uppercase hover:bg-ember-soft transition-all duration-300 rounded-sm font-bold shadow-lg shadow-ember/10 hover:shadow-ember/20 cursor-pointer"
+                  className="w-full flex items-center justify-center gap-2 bg-ember text-white px-6 py-3.5 text-xs font-semibold font-heading tracking-[0.2em] uppercase hover:bg-ember-soft transition-all duration-300 rounded-sm font-bold shadow-lg shadow-ember/10 hover:shadow-ember/20 cursor-pointer hover:-translate-y-0.5 hover:scale-[1.015] transform"
                 >
                   SUBMIT ENQUIRY <Icon name="Send" size={14} />
                 </button>

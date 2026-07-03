@@ -133,7 +133,7 @@ export default function Pricing() {
               <button
                 key={g.key}
                 onClick={() => setTab(i)}
-                className={`text-left flex items-center gap-3 px-5 py-4 border font-body transition-all duration-300 relative overflow-hidden ${
+                className={`text-left flex items-center gap-3 px-5 py-4 border font-body transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] transform relative overflow-hidden ${
                   tab === i
                     ? "border-ember/60 bg-gunmetal/80 text-silver glow-border"
                     : "border-white/5 text-silver/60 hover:border-white/15 hover:text-silver/80"

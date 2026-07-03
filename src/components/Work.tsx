@@ -90,7 +90,7 @@ export default function Work() {
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                className={`px-4 py-2 text-xs tracking-[0.15em] font-heading font-semibold border transition-all duration-300 rounded-sm ${
+                className={`px-4 py-2 text-xs tracking-[0.15em] font-heading font-semibold border transition-all duration-300 rounded-sm hover:-translate-y-0.5 hover:scale-105 transform ${
                   filter === f
                     ? "border-ember text-ember bg-ember/5"
                     : "border-white/10 text-silver/50 hover:text-silver hover:border-white/25"
@@ -106,7 +106,7 @@ export default function Work() {
           {filtered.map((item) => (
             <div
               key={item.title}
-              className="group relative aspect-[4/3] overflow-hidden border border-white/5 bg-gunmetal/30 flex items-center justify-center"
+              className="group relative aspect-[4/3] overflow-hidden border border-white/5 bg-gunmetal/30 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.015] hover:border-ember/30 hover:shadow-lg hover:shadow-ember/5 cursor-pointer"
             >
               {/* Project Image */}
               <Image

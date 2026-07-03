@@ -82,13 +82,13 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center bg-ember text-white px-7 py-3 font-heading text-xs font-bold tracking-[0.2em] hover:bg-ember-soft transition-all duration-300 rounded-sm shadow-lg shadow-ember/25"
+            className="inline-flex items-center justify-center bg-ember text-white px-7 py-3 font-heading text-xs font-bold tracking-[0.2em] hover:bg-ember-soft transition-all duration-300 rounded-sm shadow-lg shadow-ember/25 hover:-translate-y-0.5 hover:scale-105 transform"
           >
             LET&apos;S CREATE
           </Link>
           <Link
             href="/services"
-            className="inline-flex items-center justify-center gap-3 border border-white/20 text-white bg-black/40 hover:bg-white/10 px-7 py-3 font-heading text-xs font-bold tracking-[0.2em] hover:border-white/50 transition-all duration-300 rounded-sm"
+            className="inline-flex items-center justify-center gap-3 border border-white/20 text-white bg-black/40 hover:bg-white/10 px-7 py-3 font-heading text-xs font-bold tracking-[0.2em] hover:border-white/50 transition-all duration-300 rounded-sm hover:-translate-y-0.5 hover:scale-105 transform shadow-md shadow-white/0 hover:shadow-white/5"
           >
             VIEW WORK
             <span className="flex items-center justify-center w-5 h-5 rounded-full border border-white/80">

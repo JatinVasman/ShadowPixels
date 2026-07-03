@@ -54,7 +54,7 @@ export default function BlogsPage() {
                 <button
                   key={c}
                   onClick={() => setFilter(c)}
-                  className={`px-4 py-2 text-xs tracking-[0.15em] font-heading font-semibold border transition-all duration-300 rounded-sm ${
+                  className={`px-4 py-2 text-xs tracking-[0.15em] font-heading font-semibold border transition-all duration-300 rounded-sm hover:-translate-y-0.5 hover:scale-105 transform ${
                     filter === c
                       ? "border-ember text-ember bg-ember/5"
                       : "border-white/10 text-silver/50 hover:text-silver hover:border-white/25"

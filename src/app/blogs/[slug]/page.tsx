@@ -150,7 +150,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Back button */}
           <Link
             href="/blogs"
-            className="inline-flex items-center gap-2 text-xs font-heading font-bold tracking-widest text-silver/50 hover:text-ember transition-colors duration-300 uppercase mb-10"
+            className="inline-flex items-center gap-2 text-xs font-heading font-bold tracking-widest text-silver/50 hover:text-ember transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 transform uppercase mb-10"
           >
             <Icon name="ArrowLeft" size={14} /> Back to Blogs
           </Link>

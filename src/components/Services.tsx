@@ -64,7 +64,7 @@ function ServicesContent({ hideBorder = false }: { hideBorder?: boolean }) {
               <button
                 key={s.key}
                 onClick={() => setActive(i)}
-                className={`text-left flex items-center gap-4 px-5 py-4 border transition-all duration-300 font-body relative overflow-hidden group ${
+                className={`text-left flex items-center gap-4 px-5 py-4 border transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.02] transform font-body relative overflow-hidden group ${
                   active === i
                     ? "border-ember/60 bg-gunmetal/80 glow-border"
                     : "border-white/5 hover:border-white/15 hover:bg-white/2"

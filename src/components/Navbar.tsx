@@ -57,7 +57,7 @@ export default function Navbar() {
               <li key={l.href} className="relative flex items-center h-full">
                 <Link
                   href={l.href}
-                  className={`transition-colors duration-300 hover:text-ember py-2 ${
+                  className={`transition-all duration-300 hover:text-ember py-2 hover:-translate-y-0.5 hover:scale-105 transform inline-block ${
                     isActive ? "text-ember" : "text-silver/80"
                   }`}
                 >
@@ -74,7 +74,7 @@ export default function Navbar() {
         {/* Get in Touch Button with exclamation mark */}
         <Link
           href="/contact"
-          className="hidden md:inline-flex items-center justify-center border border-ember px-5 py-2.5 text-[10px] tracking-[0.2em] font-heading font-semibold text-ember hover:bg-ember hover:text-obsidian transition-all duration-300 rounded-sm"
+          className="hidden md:inline-flex items-center justify-center border border-ember px-5 py-2.5 text-[10px] tracking-[0.2em] font-heading font-semibold text-ember hover:bg-ember hover:text-obsidian transition-all duration-300 rounded-sm hover:-translate-y-0.5 hover:scale-105 transform shadow-md shadow-ember/0 hover:shadow-ember/15"
         >
           GET IN TOUCH!
         </Link>
@@ -93,7 +93,11 @@ export default function Navbar() {
           <ul className="flex flex-col px-5 py-4 gap-4 font-body text-silver/90">
             {links.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} onClick={() => setOpen(false)}>
+                <Link 
+                  href={l.href} 
+                  onClick={() => setOpen(false)}
+                  className="transition-all duration-300 hover:text-ember hover:-translate-y-0.5 hover:scale-105 transform inline-block"
+                >
                   {l.label}
                 </Link>
               </li>
@@ -102,7 +106,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="inline-flex border border-ember/70 px-4 py-2 text-xs tracking-[0.15em] text-ember"
+                className="inline-flex border border-ember/70 px-4 py-2 text-xs tracking-[0.15em] text-ember transition-all duration-300 hover:bg-ember hover:text-obsidian rounded-sm hover:-translate-y-0.5 hover:scale-105 transform"
               >
                 GET IN TOUCH!
               </Link>

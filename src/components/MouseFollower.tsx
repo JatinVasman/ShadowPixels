@@ -14,7 +14,7 @@ export default function MouseFollower() {
 
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
-      if (!visible) setVisible(true);
+      setVisible(true);
     };
 
     const handleMouseLeave = () => {
@@ -34,21 +34,21 @@ export default function MouseFollower() {
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseenter", handleMouseEnter);
     };
-  }, [visible]);
-
-  if (!visible) return null;
+  }, []);
 
   return (
     <div
-      className="fixed inset-0 pointer-events-none z-[1] overflow-hidden mix-blend-screen"
+      className={`fixed inset-0 pointer-events-none z-[40] overflow-hidden mix-blend-screen transition-opacity duration-700 ease-out ${
+        visible ? "opacity-100" : "opacity-0"
+      }`}
       aria-hidden="true"
     >
       <div
-        className="absolute w-[500px] h-[500px] rounded-full blur-[100px] opacity-100 pointer-events-none will-change-transform"
+        className="absolute w-[500px] h-[500px] rounded-full blur-[100px] pointer-events-none will-change-transform"
         style={{
-          background: "radial-gradient(circle, rgba(255, 106, 0, 0.18) 0%, rgba(255, 106, 0, 0.05) 45%, rgba(255, 106, 0, 0) 70%)",
+          background: "radial-gradient(circle, rgba(255, 106, 0, 0.22) 0%, rgba(255, 106, 0, 0.07) 45%, rgba(255, 106, 0, 0) 70%)",
           transform: `translate3d(${position.x - 250}px, ${position.y - 250}px, 0)`,
-          transition: "transform 800ms cubic-bezier(0.16, 1, 0.3, 1)",
+          transition: "transform 600ms cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       />
     </div>

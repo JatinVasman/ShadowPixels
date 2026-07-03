@@ -58,7 +58,7 @@ export default function About() {
         <div className="mt-14 flex justify-start">
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 border border-ember/60 hover:border-ember text-ember bg-black/20 hover:bg-ember/5 px-6 py-3 text-xs font-semibold tracking-wider font-heading uppercase transition-all duration-300 rounded-sm"
+            className="inline-flex items-center gap-2 border border-ember/60 hover:border-ember text-ember bg-black/20 hover:bg-ember/5 px-6 py-3 text-xs font-semibold tracking-wider font-heading uppercase transition-all duration-300 rounded-sm hover:-translate-y-0.5 hover:scale-105 transform shadow-md shadow-ember/0 hover:shadow-ember/15"
           >
             Read Our Story <Icon name="ArrowRight" size={14} />
           </Link>

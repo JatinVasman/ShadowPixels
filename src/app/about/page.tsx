@@ -265,7 +265,7 @@ export default function AboutPage() {
               <div className="pt-4 flex gap-4">
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-2 border border-ember/40 hover:border-ember text-silver hover:text-white px-5 py-2.5 text-xs font-heading font-black tracking-widest transition-colors duration-300 rounded-sm"
+                  className="inline-flex items-center gap-2 border border-ember/40 hover:border-ember text-silver hover:text-white px-5 py-2.5 text-xs font-heading font-black tracking-widest transition-all duration-300 rounded-sm hover:-translate-y-0.5 hover:scale-105 transform shadow-md shadow-ember/0 hover:shadow-ember/15"
                 >
                   WORK WITH RISHABH <Icon name="ArrowRight" size={14} />
                 </a>
@@ -341,7 +341,7 @@ export default function AboutPage() {
           <div className="mt-8 flex justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-ember text-white hover:bg-ember-soft px-8 py-3.5 font-heading text-xs font-black tracking-[0.2em] transition-all duration-300 rounded-sm shadow-xl shadow-ember/20"
+              className="inline-flex items-center gap-2 bg-ember text-white hover:bg-ember-soft px-8 py-3.5 font-heading text-xs font-black tracking-[0.2em] transition-all duration-300 rounded-sm shadow-xl shadow-ember/20 hover:-translate-y-0.5 hover:scale-105 transform"
             >
               START A PROJECT <Icon name="Send" size={14} />
             </Link>

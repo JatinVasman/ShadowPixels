@@ -83,7 +83,7 @@ export default function HomeServices() {
         <div className="mt-16 flex justify-center">
           <Link
             href="/services"
-            className="inline-flex items-center gap-3 border border-ember/40 hover:border-ember text-ember bg-ember/5 hover:bg-ember/10 px-8 py-3.5 font-heading text-xs font-black tracking-[0.2em] transition-all duration-300 rounded-sm"
+            className="inline-flex items-center gap-3 border border-ember/40 hover:border-ember text-ember bg-ember/5 hover:bg-ember/10 px-8 py-3.5 font-heading text-xs font-black tracking-[0.2em] transition-all duration-300 rounded-sm hover:-translate-y-0.5 hover:scale-105 transform shadow-md shadow-ember/0 hover:shadow-ember/15"
           >
             VIEW ALL SERVICES
             <Icon name="ArrowRight" size={14} />

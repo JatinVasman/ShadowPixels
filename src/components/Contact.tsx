@@ -6,6 +6,8 @@ import SocialIcon from "./SocialIcon";
 
 export default function Contact({ hideBorder = false }: { hideBorder?: boolean }) {
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -16,10 +18,31 @@ export default function Contact({ hideBorder = false }: { hideBorder?: boolean }
     budget: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate API request
-    setSent(true);
+    setSending(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setSent(true);
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleInputChange = (
@@ -210,6 +233,7 @@ export default function Contact({ hideBorder = false }: { hideBorder?: boolean }
                 <button
                   onClick={() => {
                     setSent(false);
+                    setError("");
                     setFormData({
                       fullName: "",
                       email: "",
@@ -389,12 +413,37 @@ export default function Contact({ hideBorder = false }: { hideBorder?: boolean }
                   </div>
                 </div>
 
+                {/* Error Message */}
+                {error && (
+                  <div className="flex items-center gap-3 bg-red-500/10 border border-red-500/30 px-4 py-3 rounded-sm">
+                    <Icon name="AlertCircle" size={16} className="text-red-400 shrink-0" />
+                    <p className="text-red-400 font-body text-sm">{error}</p>
+                  </div>
+                )}
+
                 {/* Submit button */}
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 bg-ember text-white px-6 py-3.5 text-xs font-semibold font-heading tracking-[0.2em] uppercase hover:bg-ember-soft transition-all duration-300 rounded-sm font-bold shadow-lg shadow-ember/10 hover:shadow-ember/20 cursor-pointer hover:-translate-y-0.5 hover:scale-[1.015] transform"
+                  disabled={sending}
+                  className={`w-full flex items-center justify-center gap-2 bg-ember text-white px-6 py-3.5 text-xs font-semibold font-heading tracking-[0.2em] uppercase transition-all duration-300 rounded-sm font-bold shadow-lg shadow-ember/10 ${
+                    sending
+                      ? "opacity-70 cursor-not-allowed"
+                      : "hover:bg-ember-soft hover:shadow-ember/20 cursor-pointer hover:-translate-y-0.5 hover:scale-[1.015] transform"
+                  }`}
                 >
-                  SUBMIT ENQUIRY <Icon name="Send" size={14} />
+                  {sending ? (
+                    <>
+                      <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      SENDING...
+                    </>
+                  ) : (
+                    <>
+                      SUBMIT ENQUIRY <Icon name="Send" size={14} />
+                    </>
+                  )}
                 </button>
               </form>
             )}
